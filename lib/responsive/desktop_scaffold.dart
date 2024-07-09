@@ -15,8 +15,22 @@ class DesktopScaffold extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        title: const Text('Name Page'),
+        // automaticallyImplyLeading: false,
+        leading: const Padding(
+          padding: EdgeInsets.all(6.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            foregroundImage: AssetImage('assets/images/logo_small.png'),
+          ),
+        ),
+        title: const Text(
+          'Veleros Santa Marta',
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'DancingScript'         
+          )
+        ),
+        // title: const Text('Name Page'),
         actions:  [
           ExtendAppBarButton(
             text: 'Home',

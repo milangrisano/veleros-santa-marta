@@ -17,12 +17,11 @@ class ExtendAppBarButton extends StatelessWidget {
       child: TextButton(
         onPressed: () => onPressed(),
         style: TextButton.styleFrom(
-          foregroundColor: Colors.black,
+          foregroundColor: Colors.white,
           textStyle: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
           )
-          // disabledForegroundColor: Colors.red.withOpacity(0.38),
         ),
         child: Text(text)
       ),
