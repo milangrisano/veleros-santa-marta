@@ -6,7 +6,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
+       decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/background_home.jpg'),
+          fit: BoxFit.cover,
+        )
+      ),
       child: const Center(
         child: Text(
           'HomeView',
