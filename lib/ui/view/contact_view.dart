@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
 class ContactView extends StatelessWidget {
@@ -12,10 +13,19 @@ class ContactView extends StatelessWidget {
         Positioned(
           left: size.width * 1/10,
           child: Container(
-            color: Colors.transparent,
+            color: Colors.red,
             width: size.width * 8/10,
             height: size.height,
-            child: const CustomPageView(),
+            child: Swiper(
+              viewportFraction: 0.9,
+              scale: 0.8,
+              autoplay: true,
+              itemCount: 3,
+              itemBuilder: (context, index) => const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Placeholder(),
+              ),
+            )
           ),
         ),        
       ]
