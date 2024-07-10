@@ -19,22 +19,34 @@ class HomeView extends StatelessWidget {
       child:  Column(
         children: [
           const SizedBox(height: 200,),
-          Text(
-            'Veleros Santa Marta',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 80,
-              color: Colors.grey[600],
-              fontFamily: 'Ephesis',
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: Text(
+                'Veleros Santa Marta',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 80,
+                  color: Colors.grey[700],
+                  fontFamily: 'Ephesis',
+                ),
+              ),
             ),
           ),
-          Text(
-            'Navega con nosotros, disfruta del mar y los mas hermosos paisajes',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-              color: Colors.grey[600],
-              fontFamily: 'Praise',
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: FittedBox(
+              fit: BoxFit.fitWidth ,
+              child: Text(
+                'Navega con nosotros, disfruta del mar y los mas hermosos paisajes',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Colors.grey[700],
+                  fontFamily: 'Praise',
+                ),
+              ),
             ),
           ),
         ],

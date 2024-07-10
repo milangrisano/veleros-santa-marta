@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
 import 'package:responsive_app/shared/custom_drawer_header.dart';
 import 'package:responsive_app/shared/drawer_list_tile.dart';
+import 'package:responsive_app/shared/logo_appbar.dart';
+import 'package:responsive_app/shared/title_appbar.dart';
 import 'package:responsive_app/ui/home_body.dart';
 
 class MobileScaffold extends StatelessWidget {
@@ -16,8 +18,8 @@ class MobileScaffold extends StatelessWidget {
       backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        title: const Text('Name Page'),
+        leading: const LogoAppBar(),
+        title: const TitleAppBar(),
         centerTitle: false,
       ),
       endDrawer: Drawer(

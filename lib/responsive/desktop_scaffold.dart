@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
 import 'package:responsive_app/shared/extend_appbar_button.dart';
+import 'package:responsive_app/shared/logo_appbar.dart';
+import 'package:responsive_app/shared/title_appbar.dart';
 import 'package:responsive_app/ui/home_body.dart';
 
 class DesktopScaffold extends StatelessWidget {
@@ -15,28 +17,8 @@ class DesktopScaffold extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        // automaticallyImplyLeading: false,
-        leading: const Padding(
-          padding: EdgeInsets.all(6.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.transparent,
-            foregroundImage: AssetImage('assets/images/logo_small.png'),
-          ),
-        ),
-        title: const Text(
-          'Veleros Santa Marta',
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'DancingScript',
-            shadows: [
-              Shadow(
-                offset: Offset(5.0, 5.0),
-                blurRadius: 2.0,
-                color: Colors.black87
-              )
-            ]       
-          )
-        ),
+        leading: const LogoAppBar(),
+        title: const TitleAppBar(),
         actions:  [
           ExtendAppBarButton(
             text: 'Home',
@@ -66,4 +48,5 @@ class DesktopScaffold extends StatelessWidget {
     );
   }
 }
+
 
