@@ -19,7 +19,7 @@ class DesktopScaffold extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.all(6.0),
           child: CircleAvatar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent,
             foregroundImage: AssetImage('assets/images/logo_small.png'),
           ),
         ),
@@ -27,10 +27,16 @@ class DesktopScaffold extends StatelessWidget {
           'Veleros Santa Marta',
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'DancingScript'         
+            fontFamily: 'DancingScript',
+            shadows: [
+              Shadow(
+                offset: Offset(5.0, 5.0),
+                blurRadius: 2.0,
+                color: Colors.black87
+              )
+            ]       
           )
         ),
-        // title: const Text('Name Page'),
         actions:  [
           ExtendAppBarButton(
             text: 'Home',

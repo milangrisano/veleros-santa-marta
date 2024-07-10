@@ -21,6 +21,13 @@ class ExtendAppBarButton extends StatelessWidget {
           textStyle: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                offset: Offset(5.0, 5.0),
+                blurRadius: 3.0,
+                color: Colors.black87
+              )
+            ]
           )
         ),
         child: Text(text)

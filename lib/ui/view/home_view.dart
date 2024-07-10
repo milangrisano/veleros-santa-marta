@@ -6,20 +6,38 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       decoration: const BoxDecoration(
+       decoration:  BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/background_home.jpg'),
+          image: const AssetImage('assets/images/background_home.jpg'),
           fit: BoxFit.cover,
-        )
-      ),
-      child: const Center(
-        child: Text(
-          'HomeView',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 40
+          colorFilter: ColorFilter.mode(
+            Colors.grey.shade600,
+            BlendMode.softLight
           ),
         )
+      ),
+      child:  Column(
+        children: [
+          const SizedBox(height: 200,),
+          Text(
+            'Veleros Santa Marta',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 80,
+              color: Colors.grey[600],
+              fontFamily: 'Ephesis',
+            ),
+          ),
+          Text(
+            'Navega con nosotros, disfruta del mar y los mas hermosos paisajes',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+              color: Colors.grey[600],
+              fontFamily: 'Praise',
+            ),
+          ),
+        ],
       ),
     );
   }

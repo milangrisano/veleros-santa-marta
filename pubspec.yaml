@@ -28,3 +28,10 @@ flutter:
     - family: DancingScript
       fonts:
         - asset: assets/fonts/DancingScript-VariableFont_wght.ttf
+    - family: Ephesis
+      fonts:
+        - asset: assets/fonts/Ephesis-Regular.ttf
+    - family: Praise
+      fonts:
+        - asset: assets/fonts/Praise-Regular.ttf
+
