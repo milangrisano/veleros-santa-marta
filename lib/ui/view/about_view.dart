@@ -14,6 +14,12 @@ class AboutView extends StatelessWidget {
             ),
             SquareInfo(
               color: Color.fromRGBO(19, 156, 227, 1),
+              text: 'Hola Prueba',
+              colorText: Color.fromRGBO(3, 31, 131, 1),
+              fontSize: 24,
+              colorTextparagraph: Colors.white,
+              fontSizeparagraph: 18,
+              textparagraph: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             ),
           ],
         ),
@@ -34,6 +40,12 @@ class AboutView extends StatelessWidget {
             ),
             SquareInfo(
               color: Color.fromRGBO(3, 31, 131, 1),
+              text: 'Hola Prueba',
+              colorText: Color.fromRGBO(19, 156, 227, 1),
+              fontSize: 24,
+              colorTextparagraph: Colors.white,
+              fontSizeparagraph: 18,
+              textparagraph: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
             ),
           ],
         ),
@@ -66,18 +78,50 @@ class SquareImg extends StatelessWidget {
 }
 class SquareInfo extends StatelessWidget {
   final Color color;
+  final String text;
+  final String textparagraph;
+  final Color colorText;
+  final double fontSize;
+  final Color colorTextparagraph;
+  final double fontSizeparagraph;
   const SquareInfo({
     super.key,
     required this.color,
+    required this.text,
+    required this.colorText,
+    required this.fontSize,
+    required this.colorTextparagraph,
+    required this.fontSizeparagraph,
+    required this.textparagraph,
   });
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      color: color,
-      height: size.height * 1/2,
-      width: size.width * 1/3,
+    return FittedBox(
+      fit: BoxFit.contain,
+      child: Container(
+        color: color,
+        height: size.height * 1/2,
+        width: size.width * 1/3,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(text,
+              style: TextStyle(
+                color: colorText,
+                fontSize: fontSize,
+              ),
+            ),
+            Text(textparagraph,
+              style: TextStyle(
+                color: colorTextparagraph,
+                fontSize: fontSizeparagraph,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
