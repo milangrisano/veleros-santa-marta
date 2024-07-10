@@ -6,21 +6,21 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-       decoration:  BoxDecoration(
+       decoration:  const BoxDecoration(
         image: DecorationImage(
-          image: const AssetImage('assets/images/background_home.jpg'),
+          image: AssetImage('assets/images/background_home.jpg'),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
-            Colors.grey.shade600,
-            BlendMode.softLight
+            Colors.transparent,
+            BlendMode.color
           ),
         )
       ),
-      child:  Column(
+      child:  const Column(
         children: [
-          const SizedBox(height: 200,),
+          Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: FittedBox(
               fit: BoxFit.contain,
               child: Text(
@@ -28,14 +28,22 @@ class HomeView extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 80,
-                  color: Colors.grey[700],
+                  color: Colors.white,
+                  // color: Color.fromRGBO(3, 31, 131, 1),
                   fontFamily: 'Ephesis',
+                  shadows: [
+                    Shadow(
+                      offset: Offset(5.0, 5.0),
+                      blurRadius: 2.0,
+                      color: Color.fromRGBO(3, 31, 131, 1)
+                    )
+                  ]     
                 ),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: FittedBox(
               fit: BoxFit.fitWidth ,
               child: Text(
@@ -43,12 +51,20 @@ class HomeView extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
-                  color: Colors.grey[700],
+                  color: Color.fromRGBO(19, 156, 227, 1),
                   fontFamily: 'Praise',
+                  shadows: [
+                    Shadow(
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 1.0,
+                      color: Colors.white
+                    )
+                  ]
                 ),
               ),
             ),
           ),
+          Spacer(),
         ],
       ),
     );
