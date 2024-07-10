@@ -19,7 +19,7 @@ class MobileScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: const LogoAppBar(),
-        title: const TitleAppBar(),
+        title: const TitleAppBar(color: Colors.white,),
         centerTitle: false,
       ),
       endDrawer: Drawer(

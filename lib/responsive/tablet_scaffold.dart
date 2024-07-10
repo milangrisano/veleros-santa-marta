@@ -17,7 +17,7 @@ class TabletScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: const LogoAppBar(),
-        title: const TitleAppBar(),
+        title: const TitleAppBar(color: Colors.white,),
         actions:  [
           ExtendAppBarIcon(text: 'Home', onPressed: () =>pageProvider.goTo(0), icon: Icons.home,),
           ExtendAppBarIcon(text: 'About', onPressed: () => pageProvider.goTo(1), icon: Icons.people,),
