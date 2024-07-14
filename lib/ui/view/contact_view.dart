@@ -13,18 +13,32 @@ class ContactView extends StatelessWidget {
         Positioned(
           left: size.width * 1/10,
           child: Container(
-            color: Colors.red,
+            color: Colors.transparent,
             width: size.width * 8/10,
             height: size.height,
             child: Swiper(
-              viewportFraction: 0.9,
-              scale: 0.8,
+              allowImplicitScrolling: true,
+              pagination:  SwiperPagination(
+                builder: DotSwiperPaginationBuilder(
+                  activeColor:  const Color.fromRGBO(3, 31, 131, 1),
+                  color: Colors.grey[300]
+                ),
+                margin: const EdgeInsets.all(50),
+              ),
+              control: const SwiperControl(
+                disableColor: Colors.blueAccent,
+                color: Colors.red,
+                size: 50,
+              ),
+              viewportFraction: 1,
+              scale: 1,
+              // physics: const ScrollPhysics(),
+              // duration: 100,
+              // autoplayDelay: 1,
               autoplay: true,
               itemCount: 3,
-              itemBuilder: (context, index) => const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Placeholder(),
-              ),
+              // layout: SwiperLayout.STACK,
+              itemBuilder: (context, index) => const CustomPageView(),
             )
           ),
         ),        
@@ -45,7 +59,7 @@ class CustomPageView extends StatelessWidget {
       children: [
         Container(
           // color: Colors.lightBlue,
-          width: size.width * 4/10,
+          width: size.width * 3.5/10,
           height: size.height,
           decoration:  const BoxDecoration(
             image: DecorationImage(
@@ -56,7 +70,7 @@ class CustomPageView extends StatelessWidget {
         ),
         Container(
           color: Colors.transparent,
-          width: size.width * 4/10,
+          width: size.width * 3.5/10,
           height: size.height,
           child: const Column(
             children: [
