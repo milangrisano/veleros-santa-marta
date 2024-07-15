@@ -14,10 +14,11 @@ class AboutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
+        //? Primera Columna
         Column(
           children: [
-            const SquareImg(
-              image: 'assets/images/Artivela1.jpeg',
+            SquareImg(
+              image: swiperContent[0].imagen,
             ),
             SquareInfo(
               color: const Color.fromRGBO(19, 156, 227, 1),
@@ -30,20 +31,22 @@ class AboutView extends StatelessWidget {
             ),
           ],
         ),
-        const Column(
+        //? Segunda Columna
+        Column(
           children: [
-            SquareLogo(
+            const SquareLogo(
               backgroundColor: Colors.white,
             ),
             SquareImg(
-              image: 'assets/images/Artivela2.jpeg',
+              image: swiperContent[1].imagen,
             ),
           ],
         ),
+        //? Tercera Columna
         Column(
           children: [
             SquareImg(
-              image: swiperContent[0].imagen,
+              image: swiperContent[2].imagen,
             ),
             SquareInfo(
               color: const Color.fromRGBO(3, 31, 131, 1),

@@ -13,7 +13,7 @@ class InfoSwiper {
 List<InfoSwiper> swiperContent = [
 
   InfoSwiper(
-    imagen: "assets/images/Artivela3.jpeg",
+    imagen: "assets/images/Artivela1.jpeg",
     title: "Veloro Proa Ancla",
     descripcion: "A Santa Marta puedes llegar por vía aérea desde cualquier ciudad de Colombia, y está conectada por tierra con el resto del país. Las principales rutas y tarifas son"
   ),
