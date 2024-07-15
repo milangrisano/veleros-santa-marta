@@ -8,6 +8,7 @@ class HomeView extends StatelessWidget {
     return Container(
        decoration:  const BoxDecoration(
         image: DecorationImage(
+          // image: AssetImage('assets/images/Artivela2.jpeg'),
           image: AssetImage('assets/images/background_home.jpg'),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
@@ -16,11 +17,12 @@ class HomeView extends StatelessWidget {
           ),
         )
       ),
-      child:  const Column(
+      child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: FittedBox(
               fit: BoxFit.contain,
               child: Text(
@@ -28,44 +30,62 @@ class HomeView extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 80,
-                  color: Colors.white,
-                  // color: Color.fromRGBO(3, 31, 131, 1),
+                  // color: Colors.black,
+                  color: Colors.grey[300],
+                  // fontFamily: 'Ballet',
                   fontFamily: 'Ephesis',
-                  shadows: [
+                  // fontFamily: 'Praise',
+                  // fontFamily: 'MsMadi',
+                  // fontFamily: 'Ruthie',
+                  shadows: const [
                     Shadow(
-                      offset: Offset(5.0, 5.0),
+                      offset: Offset(3.0, 3.0),
                       blurRadius: 2.0,
                       color: Color.fromRGBO(3, 31, 131, 1)
+                      // color: Color.fromRGBO(19, 156, 227, 1),
                     )
                   ]     
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: FittedBox(
-              fit: BoxFit.fitWidth ,
-              child: Text(
-                'Navega con nosotros, disfruta del mar y los mas hermosos paisajes',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Color.fromRGBO(19, 156, 227, 1),
-                  fontFamily: 'Praise',
-                  shadows: [
-                    Shadow(
-                      offset: Offset(2.0, 2.0),
-                      blurRadius: 1.0,
-                      color: Colors.white
-                    )
-                  ]
-                ),
-              ),
-            ),
-          ),
-          Spacer(),
+          //?Activar aqui de ser requerido!!!
+          // SubTitleMessages(),
         ],
+      ),
+    );
+  }
+}
+
+
+//?Para ser activado
+class SubTitleMessages extends StatelessWidget {
+  const SubTitleMessages({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: FittedBox(
+        fit: BoxFit.fitWidth ,
+        child: Text(
+          'Navega con nosotros, disfruta del mar y los mas hermosos paisajes',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            color: Color.fromRGBO(19, 156, 227, 1),
+            fontFamily: 'Praise',
+            shadows: [
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 1.0,
+                color: Colors.white
+              )
+            ]
+          ),
+        ),
       ),
     );
   }

@@ -29,14 +29,17 @@ class SquareInfo extends StatelessWidget {
         height: size.height * 1/2,
         width: size.width * 1/3,
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(text,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: colorText,
                   fontSize: fontSize,
+                  fontFamily: 'Pacifico'
                 ),
               ),
               const SizedBox(height: 20),
@@ -45,7 +48,7 @@ class SquareInfo extends StatelessWidget {
                 style: TextStyle(
                   color: colorTextparagraph,
                   fontSize: fontSizeparagraph,
-                  
+                  fontFamily: 'MontserratAlternates'
                 ),
               ),
             ],

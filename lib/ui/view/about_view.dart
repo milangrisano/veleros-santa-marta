@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_app/content/info_square.dart';
 import 'package:responsive_app/shared/logo_title.dart';
 import 'package:responsive_app/shared/square_image.dart';
 import 'package:responsive_app/shared/square_info.dart';
-import 'package:responsive_app/util/info_swiper.dart';
 
 
 class AboutView extends StatelessWidget {
@@ -18,16 +18,16 @@ class AboutView extends StatelessWidget {
         Column(
           children: [
             SquareImg(
-              image: swiperContent[0].imagen,
+              image: squareContent[0].imagen,
             ),
             SquareInfo(
               color: const Color.fromRGBO(19, 156, 227, 1),
-              text: swiperContent[1].title,
+              text: squareContent[0].title,
               colorText: const Color.fromRGBO(3, 31, 131, 1),
               fontSize: 24,
               colorTextparagraph: Colors.white,
               fontSizeparagraph: 18,
-              textparagraph: swiperContent[1].descripcion,
+              textparagraph: squareContent[0].descripcion,
             ),
           ],
         ),
@@ -38,7 +38,7 @@ class AboutView extends StatelessWidget {
               backgroundColor: Colors.white,
             ),
             SquareImg(
-              image: swiperContent[1].imagen,
+              image: squareContent[1].imagen,
             ),
           ],
         ),
@@ -46,16 +46,16 @@ class AboutView extends StatelessWidget {
         Column(
           children: [
             SquareImg(
-              image: swiperContent[2].imagen,
+              image: squareContent[2].imagen,
             ),
             SquareInfo(
               color: const Color.fromRGBO(3, 31, 131, 1),
-              text: swiperContent[0].title,
+              text: squareContent[2].title,
               colorText: const Color.fromRGBO(19, 156, 227, 1),
               fontSize: 24,
               colorTextparagraph: Colors.white,
               fontSizeparagraph: 18,
-              textparagraph: swiperContent[0].descripcion,
+              textparagraph: squareContent[2].descripcion,
             ),
           ],
         ),
