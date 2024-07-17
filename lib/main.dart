@@ -38,7 +38,7 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Responsive LandingPage',
+      title: 'Veleros Santa Marta',
       onGenerateRoute: Flurorouter.router.generator,
       initialRoute: '/home',
     );
