@@ -1,5 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_app/content/info_swiper.dart';
+import 'package:responsive_app/shared/background_line.dart';
 
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
@@ -8,48 +10,63 @@ class ContactView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Stack(
+      alignment: Alignment.center,
       children: [        
-        const Background(),
-        Positioned(
-          left: size.width * 1/10,
-          child: Container(
-            color: Colors.transparent,
-            width: size.width * 8/10,
-            height: size.height,
-            child: Swiper(
-              allowImplicitScrolling: true,
-              pagination:  SwiperPagination(
-                builder: DotSwiperPaginationBuilder(
-                  activeColor:  const Color.fromRGBO(3, 31, 131, 1),
-                  color: Colors.grey[300]
-                ),
-                margin: const EdgeInsets.all(50),
-              ),
-              control: const SwiperControl(
-                disableColor: Colors.blueAccent,
-                color: Colors.red,
-                size: 50,
-              ),
-              viewportFraction: 1,
-              scale: 1,
-              // physics: const ScrollPhysics(),
-              // duration: 100,
-              // autoplayDelay: 1,
-              autoplay: true,
-              itemCount: 3,
-              // layout: SwiperLayout.STACK,
-              itemBuilder: (context, index) => const CustomPageView(),
-            )
-          ),
+        const BackgroundLine(
+          text: Text(''),
+          title: Text(''),          
+        ),
+        Container(
+          color: Colors.transparent,
+          width: size.width * 9/10,
+          height: size.height,
+          child: const CustomSwiper()
         ),        
       ]
     );
   }
 }
 
-class CustomPageView extends StatelessWidget {
-  const CustomPageView({
+class CustomSwiper extends StatelessWidget {
+  const CustomSwiper({
     super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Swiper(
+      viewportFraction: 1,
+      scale: 1,
+      duration: 1300,
+      autoplay: true,
+      autoplayDelay: 30000,
+      autoplayDisableOnInteraction: true,
+      itemCount: swiperContent.length,
+      pagination:  SwiperPagination(
+        alignment: Alignment.bottomCenter,
+        builder: DotSwiperPaginationBuilder(
+          activeColor:  const Color.fromRGBO(3, 31, 131, 1),
+          color: Colors.grey[300]
+        ),
+        margin: const EdgeInsets.all(50),
+      ),
+      control: const SwiperControl(
+        padding: EdgeInsets.only(top: 900),
+        disableColor: Colors.blueAccent,
+        // color: Color.fromRGBO(3, 31, 131, 1),
+        color:Color.fromRGBO(19, 156, 227, 1),
+        size: 50,
+      ),
+      itemBuilder: (context, index) => HorizontalPageView(index: index,),
+    );
+  }
+}
+
+class HorizontalPageView extends StatelessWidget {
+  final int index;
+  const HorizontalPageView({
+    super.key,
+    required this.index,
   });
 
   @override
@@ -59,66 +76,52 @@ class CustomPageView extends StatelessWidget {
       children: [
         Container(
           // color: Colors.lightBlue,
-          width: size.width * 3.5/10,
+          width: size.width * 4.5/10,
           height: size.height,
-          decoration:  const BoxDecoration(
+          decoration:  BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/snorkel2.jpeg'),
+              image: AssetImage(swiperContent[index].imagen),
               fit: BoxFit.cover,
             )
           ),
         ),
         Container(
           color: Colors.transparent,
-          width: size.width * 3.5/10,
+          width: size.width * 4.5/10,
           height: size.height,
-          child: const Column(
-            children: [
-              Spacer(),
-              Text(
-                'Snorkel',
-                style: TextStyle(
-                  fontSize: 30
+          child: BackgroundLine(
+            title: Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Center(
+                child: Text(
+                  textAlign: TextAlign.center,
+                  swiperContent[index].title,
+                  style: const TextStyle(
+                    color:Color.fromRGBO(3, 31, 131, 1),
+                    fontSize: 34,
+                    fontFamily: 'Ephesis',
+                  ),
                 ),
               ),
-              Spacer(),
-            ],
+            ),
+            text: Padding(
+              padding: const EdgeInsets.only(left: 20.0),
+              child: Center(
+                child: Text(
+                  swiperContent[index].descripcion,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    // fontFamily: 'Pacifico'
+                    fontFamily: 'MontserratAlternates',
+                    color: Colors.white
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ],
-    );
-  }
-}
-
-class Background extends StatelessWidget {
-  const Background({
-    super.key,
-  });
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-      color: Colors.white,
-      child: Column(
-        children: [
-          const Spacer(),
-          Container(
-            color: const Color.fromRGBO(3, 31, 131, 1),
-            height: size.height * 1/3,
-            width: size.width,
-          ),
-          Container(
-            color:  const Color.fromRGBO(19, 156, 227, 1),
-            height: size.height * 1/40,
-            width: size.width,
-          ),
-          Container(
-            color: Colors.white,
-            height: size.height * 1/10,
-            width: size.width,
-          ),
-        ],
-      ),
     );
   }
 }

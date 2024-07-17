@@ -20,7 +20,7 @@ class ExtendAppBarIcon extends StatelessWidget {
         onPressed: () => onPressed(),
         icon: Icon(icon),
         tooltip: text,
-        color: Colors.white,
+        color: Colors.grey[400],
       ),
     );
   }

@@ -23,6 +23,7 @@ class MobileScaffold extends StatelessWidget {
         centerTitle: false,
       ),
       endDrawer: Drawer(
+        // backgroundColor: Colors.blue,
         child: Column(
           children: [
             const CustomDrawerHeader(),
