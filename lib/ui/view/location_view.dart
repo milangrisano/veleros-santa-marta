@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_app/shared/location_email.dart';
 
 class LocationView extends StatelessWidget {
   const LocationView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -18,82 +18,12 @@ class LocationView extends StatelessWidget {
       ),
       child: CustomPaint(
         painter: _WaveGradientPainter(),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              height: size.height * 4.5/10,
-              width: size.width * 1/2,
-              // color: Colors.deepPurple,
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.location_on,
-                    color: Colors.white,
-                    size: 60.0,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(                  
-                      'Kr.1 No. 22 - 93 / Marina Internacional de Santa Marta Muelle E - Embarcación Artivela, Santa Marta, Magdalena, Colombia.',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(                        
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.white,
-                    size: 60.0,
-                  ),
-                  Text(                  
-                    '+57 3046654637',
-                    textAlign: TextAlign.justify,
-                    style: TextStyle(                        
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.facebook, color: Colors.white,),
-                      SizedBox(width: 10),
-                      Icon(Icons.photo, color: Colors.white,),
-                      SizedBox(width: 10),
-                      Icon(Icons.video_camera_back, color: Colors.white,),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Container( 
-              height: size.height * 1/2,
-              width: size.width * 1/2,
-              // color: Colors.greenAccent,
-              child: const Center(
-                child: Text(
-                  'LocationView',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40
-                  ),
-                ),
-              ),
-            )            
-          ],
-        ),
+        child: const LocationEmail(),
       )    
     );
   }
 }
+
 
 
 class _WaveGradientPainter extends CustomPainter{
@@ -103,7 +33,6 @@ class _WaveGradientPainter extends CustomPainter{
       center: Offset(0.0, size.height * 0.7),
       radius: 180,
     );
-
     const Gradient gradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
@@ -115,8 +44,7 @@ class _WaveGradientPainter extends CustomPainter{
         0.5,
         1.0,
       ]
-    );
-    
+    );    
     final paint = Paint()..shader = gradient.createShader(rect);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
@@ -130,10 +58,8 @@ class _WaveGradientPainter extends CustomPainter{
 
     canvas.drawPath(path, paint);
   }
-
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true;
   }
-
 }
