@@ -8,6 +8,8 @@ class SquareInfo extends StatelessWidget {
   final double fontSize;
   final Color colorTextparagraph;
   final double fontSizeparagraph;
+  final double height;
+  final double width;
   const SquareInfo({
     super.key,
     required this.color,
@@ -17,17 +19,18 @@ class SquareInfo extends StatelessWidget {
     required this.colorTextparagraph,
     required this.fontSizeparagraph,
     required this.textparagraph,
+    required this.height,
+    required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return FittedBox(
       fit: BoxFit.contain,
       child: Container(
         color: color,
-        height: size.height * 1/2,
-        width: size.width * 1/3,
+        height: height,
+        width: width,
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
