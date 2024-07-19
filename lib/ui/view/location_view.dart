@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_app/shared/location_email.dart';
+import 'package:responsive_app/shared/location_phone.dart';
 
 class LocationView extends StatelessWidget {
   const LocationView({super.key});
@@ -12,13 +12,13 @@ class LocationView extends StatelessWidget {
       decoration:  const BoxDecoration(
         image: DecorationImage(
           alignment: Alignment.topCenter,
-          image: AssetImage('assets/images/VSM-Maps.png'),
-          fit: BoxFit.fitWidth,
+          image: AssetImage('assets/images/VSM_Maps.png'),
+          fit: BoxFit.cover,
         )
       ),
       child: CustomPaint(
         painter: _WaveGradientPainter(),
-        child: const LocationEmail(),
+        child: const LocationPhone(),
       )    
     );
   }
