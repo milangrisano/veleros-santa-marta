@@ -8,8 +8,8 @@ class HomeView extends StatelessWidget {
     return Container(
        decoration:  const BoxDecoration(
         image: DecorationImage(
-          // image: AssetImage('assets/images/Artivela2.jpeg'),
-          image: AssetImage('assets/images/background_home.jpg'),
+          image: AssetImage('assets/images/Artivela2.jpeg'),
+          // image: AssetImage('assets/images/background_home.jpg'),
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
             Colors.transparent,
@@ -32,11 +32,7 @@ class HomeView extends StatelessWidget {
                   fontSize: 80,
                   // color: Colors.black,
                   color: Colors.grey[300],
-                  // fontFamily: 'Ballet',
                   fontFamily: 'Ephesis',
-                  // fontFamily: 'Praise',
-                  // fontFamily: 'MsMadi',
-                  // fontFamily: 'Ruthie',
                   shadows: const [
                     Shadow(
                       offset: Offset(3.0, 3.0),

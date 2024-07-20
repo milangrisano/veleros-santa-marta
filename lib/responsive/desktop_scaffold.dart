@@ -21,23 +21,23 @@ class DesktopScaffold extends StatelessWidget {
         title: const TitleAppBar(color: Colors.white,),
         actions:  [
           ExtendAppBarButton(
-            text: 'Home',
+            text: 'Inicio',
             onPressed: () => pageProvider.goTo(0),
           ),
           ExtendAppBarButton(
-            text: 'About',
+            text: 'Nosotros',
             onPressed: () => pageProvider.goTo(1),
           ),
           ExtendAppBarButton(
-            text: 'Pricing',
+            text: 'Imagenes',
             onPressed: () => pageProvider.goTo(2),
           ),
           ExtendAppBarButton(
-            text: 'Contact',
+            text: 'Servicios',
             onPressed: () => pageProvider.goTo(3),
           ),
           ExtendAppBarButton(
-            text: 'Location',
+            text: 'Contactanos',
             onPressed: () => pageProvider.goTo(4),
           ),
           const SizedBox(width: 20),          

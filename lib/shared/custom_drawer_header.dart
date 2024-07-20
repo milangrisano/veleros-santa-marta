@@ -7,18 +7,27 @@ class CustomDrawerHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  DrawerHeader(
+    return  const DrawerHeader(
       child: Column(
         children: [
-          Image.asset(
-            'assets/images/logo_small.png',
-            scale: 1.5,
+          CircleAvatar(
+            radius: 55,
+            backgroundColor: Colors.white,
+            foregroundImage: AssetImage('assets/images/logo_small.png'),
           ),
-          const Text(
+          Text(
             'Veleros Santa Marta',
             style: TextStyle(
-              color: Color.fromRGBO(3, 31, 131, 1),
+              color: Colors.white,
+              // color: Color.fromRGBO(3, 31, 131, 1),
               fontFamily: 'DancingScript',
+              shadows: [
+                Shadow(
+                  offset: Offset(5.0, 5.0),
+                  blurRadius: 2.0,
+                  color: Color.fromRGBO(3, 31, 131, 1),
+                )
+              ]     
               // fontSize: 32,
             )
           )

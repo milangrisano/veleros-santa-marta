@@ -15,7 +15,9 @@ class DrawerListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ListTile(
       leading: Icon(icon),
+      iconColor: Colors.white,
       title: name,
+      textColor: Colors.white,
       onTap: () {
         onPressed();
         Navigator.pop(context);
