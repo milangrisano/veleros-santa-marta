@@ -31,10 +31,8 @@ class AboutViewMobile extends StatelessWidget {
         margin: const EdgeInsets.all(50),
       ),
       control:   SwiperControl(
-        padding: EdgeInsets.only(top: size.height * 8/10),
+        padding: EdgeInsets.only(top: size.height * 9/10),
         disableColor: Colors.blueAccent,
-        // color: Color.fromRGBO(3, 31, 131, 1),
-        // color:Color.fromRGBO(19, 156, 227, 1),
         color:Colors.black,
         size: 50,
       ),
@@ -53,7 +51,6 @@ class SwiperSquare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final currentWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [        
         SquareImg(
@@ -84,9 +81,9 @@ class SwiperSquare extends StatelessWidget {
                   const SizedBox(height: 20),
                   Text(squareMobilContent[index].description,
                     textAlign: TextAlign.justify,
-                    style: TextStyle(
-                      color: const Color(0xFFFFFFFF),
-                      fontSize: currentWidth < 900 ? 14 : 18,
+                    style: const TextStyle(
+                      color: Color(0xFFFFFFFF),
+                      fontSize: 18,
                       fontFamily: 'MontserratAlternates'
                     ),
                   ),

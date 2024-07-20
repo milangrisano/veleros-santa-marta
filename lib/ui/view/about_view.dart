@@ -13,6 +13,7 @@ class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final currentWidth = MediaQuery.of(context).size.width;
     return  Row(
       children: [
         //? Primera Columna
@@ -29,9 +30,9 @@ class AboutView extends StatelessWidget {
               color: const Color.fromRGBO(19, 156, 227, 1),
               text: squareContent[0].title,
               colorText: const Color.fromRGBO(3, 31, 131, 1),
-              fontSize: 24,
+              fontSize: currentWidth < 590 ? 18 : 24,
               colorTextparagraph: Colors.white,
-              fontSizeparagraph: 18,
+              fontSizeparagraph: currentWidth < 892 ? 12 : 18,
               textparagraph: squareContent[0].descripcion,
             ),
           ],
@@ -65,9 +66,9 @@ class AboutView extends StatelessWidget {
               color: const Color.fromRGBO(3, 31, 131, 1),
               text: squareContent[2].title,
               colorText: const Color.fromRGBO(19, 156, 227, 1),
-              fontSize: 24,
+              fontSize: currentWidth < 590 ? 18 : 24,
               colorTextparagraph: Colors.white,
-              fontSizeparagraph: 18,
+              fontSizeparagraph: currentWidth < 892 ? 12 : 18,
               textparagraph: squareContent[2].descripcion,
             ),
           ],

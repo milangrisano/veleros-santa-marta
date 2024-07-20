@@ -34,6 +34,7 @@ class CustomSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Swiper(
       viewportFraction: 1,
       scale: 1,
@@ -50,11 +51,10 @@ class CustomSwiper extends StatelessWidget {
         ),
         margin: const EdgeInsets.all(50),
       ),
-      control: const SwiperControl(
-        padding: EdgeInsets.only(top: 900),
+      control: SwiperControl(
+        padding: EdgeInsets.only(top: size.height * 9/10),
         disableColor: Colors.blueAccent,
-        // color: Color.fromRGBO(3, 31, 131, 1),
-        color:Color.fromRGBO(19, 156, 227, 1),
+        color:const Color.fromRGBO(19, 156, 227, 1),
         size: 50,
       ),
       itemBuilder: (context, index) => HorizontalPageView(index: index,),
@@ -72,6 +72,7 @@ class HorizontalPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final currentWidth = MediaQuery.of(context).size.width;
     return Row(
       children: [
         Container(
@@ -110,8 +111,8 @@ class HorizontalPageView extends StatelessWidget {
                 child: Text(
                   swiperContent[index].descripcion,
                   textAlign: TextAlign.justify,
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: currentWidth < 500 ? 10 : 12,
                     // fontFamily: 'Pacifico'
                     fontFamily: 'MontserratAlternates',
                     color: Colors.white
