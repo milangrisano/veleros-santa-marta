@@ -13,7 +13,7 @@ class InfoSquare {
 List<InfoSquare> squareContent = [
 
   InfoSquare(
-    imagen: "assets/images/Artivela2.jpeg",
+    imagen: "assets/images/Artivela6.png",
     title: "Navega con Nosotros",
     descripcion: "A Santa Marta puedes llegar por vía aérea desde cualquier ciudad de Colombia, y está conectada por tierra con el resto del país. Las principales rutas y tarifas son"
   ),

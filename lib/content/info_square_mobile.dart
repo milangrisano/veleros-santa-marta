@@ -19,7 +19,7 @@ class InfoSquareMobile {
 
 List<InfoSquareMobile> squareMobilContent = [
   InfoSquareMobile(
-    image: "assets/images/Artivela2.jpeg",
+    image: "assets/images/Artivela6.png",
     title: "Navega con Nosotros",
     description: "A Santa Marta puedes llegar por vía aérea desde cualquier ciudad de Colombia, y está conectada por tierra con el resto del país. Las principales rutas y tarifas son",
     colorBackground: 0xFF031F83,
