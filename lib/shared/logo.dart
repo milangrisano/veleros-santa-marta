@@ -22,13 +22,15 @@ class SquareLogo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset('assets/images/logo_small.png'),
-          const Text(
-           'Veleros Santa Marta',
-            style: TextStyle(
-              color: Color.fromRGBO(3, 31, 131, 1),
-              fontFamily: 'DancingScript',
-              fontSize: 32,
-            )
+          const FittedBox(
+            child: Text(
+             'Veleros Santa Marta',
+              style: TextStyle(
+                color: Color.fromRGBO(3, 31, 131, 1),
+                fontFamily: 'DancingScript',
+                fontSize: 32,
+              )
+            ),
           ),
         ],
       )

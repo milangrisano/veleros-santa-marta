@@ -4,7 +4,6 @@ import 'package:responsive_app/content/info_square_mobile.dart';
 // ignore: unused_import
 import 'package:responsive_app/shared/logo.dart';
 import 'package:responsive_app/shared/square_image.dart';
-import 'package:responsive_app/shared/square_info.dart';
 
 
 class AboutViewMobile extends StatelessWidget {
@@ -46,11 +45,15 @@ class AboutViewMobile extends StatelessWidget {
 
 class SwiperSquare extends StatelessWidget {
   final int index;
-  const SwiperSquare({super.key, required this.index});
+  const SwiperSquare({
+    super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final currentWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [        
         SquareImg(
@@ -58,57 +61,41 @@ class SwiperSquare extends StatelessWidget {
           height: size.height * 1/2,
           width: size.width,
         ),
-        SquareInfo(
-          height: size.height * 1/2,
-          width: size.width,
-          color: const Color.fromRGBO(3, 31, 131, 1),
-          // color: Colors.white,
-          text: squareMobilContent[index].title,
-          colorText: const Color.fromRGBO(19, 156, 227, 1),
-          fontSize: 24,
-          colorTextparagraph: Colors.white,
-          fontSizeparagraph: 14,
-          textparagraph: squareMobilContent[index].description,
-        ),
+        FittedBox(
+          fit: BoxFit.contain,
+          child: Container(
+            color: Color(squareMobilContent[index].colorBackground),
+            height: size.height * 1/2,
+            width: size.width,
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(squareMobilContent[index].title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(squareMobilContent[index].colorText),
+                      fontSize: squareMobilContent[index].fontSize,
+                      fontFamily: squareMobilContent[index].fontfamilytile,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(squareMobilContent[index].description,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: const Color(0xFFFFFFFF),
+                      fontSize: currentWidth < 900 ? 8 : 18,
+                      fontFamily: 'MontserratAlternates'
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
 }
-
-        // SquareLogo(
-        //   backgroundColor: Colors.white,
-        //   height: size.height * 1/2,
-        //   width: size.width,
-        // ),
-        // SquareInfo(
-        //   height: size.height * 1/4,
-        //   width: size.width,
-        //   color: const Color.fromRGBO(19, 156, 227, 1),
-        //   text: squareContent[0].title,
-        //   colorText: const Color.fromRGBO(3, 31, 131, 1),
-        //   fontSize: 24,
-        //   colorTextparagraph: Colors.white,
-        //   fontSizeparagraph: 18,
-        //   textparagraph: squareContent[0].descripcion,
-        // ),
-        // SquareImg(
-        //   image: squareContent[0].imagen,
-        //   height: size.height * 1/4,
-        //   width: size.width,
-        // ),
-        // SquareImg(
-        //   image: squareContent[2].imagen,
-        //   height: size.height * 1/2,
-        //   width: size.width,
-        // ),
-        // SquareInfo(
-        //   height: size.height * 1/2,
-        //   width: size.width,
-        //   color: const Color.fromRGBO(3, 31, 131, 1),
-        //   text: squareContent[2].title,
-        //   colorText: const Color.fromRGBO(19, 156, 227, 1),
-        //   fontSize: 24,
-        //   colorTextparagraph: Colors.white,
-        //   fontSizeparagraph: 18,
-        //   textparagraph: squareContent[2].descripcion,
-        // ),
