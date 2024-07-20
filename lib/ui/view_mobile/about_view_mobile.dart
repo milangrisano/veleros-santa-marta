@@ -86,7 +86,7 @@ class SwiperSquare extends StatelessWidget {
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                       color: const Color(0xFFFFFFFF),
-                      fontSize: currentWidth < 900 ? 8 : 18,
+                      fontSize: currentWidth < 900 ? 14 : 18,
                       fontFamily: 'MontserratAlternates'
                     ),
                   ),
