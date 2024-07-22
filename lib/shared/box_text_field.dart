@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TextBoxField extends StatelessWidget {
+class BoxEmailField extends StatelessWidget {
   final String hintText;
   final String labelText;
-  const TextBoxField({
+  const BoxEmailField({
     super.key,
     required this.hintText,
     required this.labelText,
@@ -19,7 +19,7 @@ class TextBoxField extends StatelessWidget {
           prefixIcon: const Icon(Icons.mail_outline),
           filled: true,
           hintText: hintText,
-          hintStyle:  const TextStyle(
+          hintStyle: const TextStyle(
             backgroundColor: Colors.white,
           ),
           labelText: labelText,
