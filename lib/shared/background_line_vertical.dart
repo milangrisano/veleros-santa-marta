@@ -15,13 +15,13 @@ class BackgroundLineVertical extends StatelessWidget {
       children: [
         Container(
           color: Colors.white,
-          height: size.height * 0.4 / 5,
+          height: size.height * 4.5 / 10,
           width: size.width,
           child: title,
         ),
         Container(
           color: const Color.fromRGBO(3, 31, 131, 1),
-          height: size.height * 4.6 / 5,
+          height: size.height * 4.3 / 10,
           width: size.width,
           child: text,
         ),

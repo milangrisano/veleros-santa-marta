@@ -11,6 +11,7 @@ class VerticalPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final currentWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Container(
@@ -32,7 +33,7 @@ class VerticalPageView extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 width: size.width,
-                height: size.height * 0.4 / 5,
+                height: size.height * 0.5 / 5,
                 color: Colors.white,
                 child: Text(
                   textAlign: TextAlign.center,
@@ -54,8 +55,8 @@ class VerticalPageView extends StatelessWidget {
                   child: Text(
                     swiperContent[index].descripcion,
                     textAlign: TextAlign.justify,
-                    style: const TextStyle(
-                        fontSize: 14,
+                    style: TextStyle(
+                        fontSize: currentWidth < 1171 ? 12 : 14,
                         fontFamily: 'MontserratAlternates',
                         color: Colors.white),
                   ),

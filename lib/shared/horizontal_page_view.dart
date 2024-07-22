@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_app/content/info_swiper.dart';
 import 'package:responsive_app/shared/background_line_horizontal.dart';
-import 'package:responsive_app/shared/background_line_vertical.dart';
 
 class HorizontalPageView extends StatelessWidget {
   final int index;
@@ -13,6 +12,7 @@ class HorizontalPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final currentWidth = MediaQuery.of(context).size.width;
     return Row(
       children: [
         Container(
@@ -38,7 +38,7 @@ class HorizontalPageView extends StatelessWidget {
                   swiperContent[index].title,
                   style: const TextStyle(
                     color: Color.fromRGBO(3, 31, 131, 1),
-                    fontSize: 34,
+                    fontSize: 32,
                     fontFamily: 'Ephesis',
                   ),
                 ),
@@ -50,8 +50,8 @@ class HorizontalPageView extends StatelessWidget {
                 child: Text(
                   swiperContent[index].descripcion,
                   textAlign: TextAlign.justify,
-                  style: const TextStyle(
-                      fontSize: 18,
+                  style: TextStyle(
+                      fontSize: currentWidth > 1171 ? 16 : 12,
                       // fontFamily: 'Pacifico'
                       fontFamily: 'MontserratAlternates',
                       color: Colors.white),
