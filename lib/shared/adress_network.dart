@@ -10,7 +10,7 @@ class AdressNetwork extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final currentWidth = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       height: size.height * 4.5 / 10,
       width: size.width * 1 / 2,
       // color: Colors.deepPurple,

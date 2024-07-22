@@ -12,7 +12,7 @@ class EmailBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       // color: Colors.greenAccent,
       height: size.height * 1 / 2,
       width: size.width * 1 / 2,
