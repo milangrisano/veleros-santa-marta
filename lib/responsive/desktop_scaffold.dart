@@ -12,14 +12,16 @@ class DesktopScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: const LogoAppBar(),
-        title: const TitleAppBar(color: Colors.white,),
-        actions:  [
+        title: const TitleAppBar(
+          color: Colors.white,
+        ),
+        actions: [
           ExtendAppBarButton(
             text: 'Inicio',
             onPressed: () => pageProvider.goTo(0),
@@ -28,19 +30,19 @@ class DesktopScaffold extends StatelessWidget {
             text: 'Nosotros',
             onPressed: () => pageProvider.goTo(1),
           ),
+          // ExtendAppBarButton(
+          //   text: 'Imagenes',
+          //   onPressed: () => pageProvider.goTo(2),
+          // ),
           ExtendAppBarButton(
-            text: 'Imagenes',
+            text: 'Servicios',
             onPressed: () => pageProvider.goTo(2),
           ),
           ExtendAppBarButton(
-            text: 'Servicios',
+            text: 'Contactanos',
             onPressed: () => pageProvider.goTo(3),
           ),
-          ExtendAppBarButton(
-            text: 'Contactanos',
-            onPressed: () => pageProvider.goTo(4),
-          ),
-          const SizedBox(width: 20),          
+          const SizedBox(width: 20),
         ],
         // elevation: 10,
       ),
@@ -48,5 +50,4 @@ class DesktopScaffold extends StatelessWidget {
     );
   }
 }
-
-
+//! colocar en lista pricing para no teber errores y cambiar el index de goTo()//!

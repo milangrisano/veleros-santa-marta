@@ -30,7 +30,7 @@ class AdressNetwork extends StatelessWidget {
               textAlign: TextAlign.justify,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: currentWidth < 580 ? 16 : 24,
+                fontSize: currentWidth < 580 ? 14 : 24,
                 color: Colors.white,
               ),
             ),

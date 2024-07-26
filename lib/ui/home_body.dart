@@ -21,7 +21,7 @@ class HomeBody extends StatelessWidget {
       children: [
         const HomeView(),
         currentWidth < 720 ? const AboutViewMobile() : const AboutView(),
-        const PricingView(),
+        // const PricingView(),
         const ContactView(),
         const LocationView(),
       ],

@@ -40,20 +40,20 @@ class MobileScaffold extends StatelessWidget {
               name: const Text('Nosotros'),
               onPressed: () => pageProvider.goTo(1),
             ),
-            DrawerListTile(
-              icon: Icons.money,
-              name: const Text('Imagenes'),
-              onPressed: () => pageProvider.goTo(2),
-            ),
+            // DrawerListTile(
+            //   icon: Icons.money,
+            //   name: const Text('Imagenes'),
+            //   onPressed: () => pageProvider.goTo(2),
+            // ),
             DrawerListTile(
               icon: Icons.mail_outline_outlined,
               name: const Text('Servicios'),
-              onPressed: () => pageProvider.goTo(3),
+              onPressed: () => pageProvider.goTo(2),
             ),
             DrawerListTile(
               icon: Icons.location_on,
               name: const Text('Contactanos'),
-              onPressed: () => pageProvider.goTo(4),
+              onPressed: () => pageProvider.goTo(3),
             ),
           ],
         ),
@@ -62,3 +62,4 @@ class MobileScaffold extends StatelessWidget {
     );
   }
 }
+//! colocar en lista pricing para no teber errores y cambiar el index de goTo()//!

@@ -12,16 +12,18 @@ class TabletScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    return  Scaffold(
+    return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: const LogoAppBar(),
-        title: const TitleAppBar(color: Colors.white,),
-        actions:  [
+        title: const TitleAppBar(
+          color: Colors.white,
+        ),
+        actions: [
           ExtendAppBarIcon(
             text: 'Home',
-            onPressed: () =>pageProvider.goTo(0),
+            onPressed: () => pageProvider.goTo(0),
             icon: Icons.home,
           ),
           ExtendAppBarIcon(
@@ -29,22 +31,22 @@ class TabletScaffold extends StatelessWidget {
             onPressed: () => pageProvider.goTo(1),
             icon: Icons.people,
           ),
-          ExtendAppBarIcon(
-            text: 'Pricing',
-            onPressed: () => pageProvider.goTo(2),
-            icon: Icons.attach_money_sharp,
-          ),
+          // ExtendAppBarIcon(
+          //   text: 'Pricing',
+          //   onPressed: () => pageProvider.goTo(2),
+          //   icon: Icons.attach_money_sharp,
+          // ),
           ExtendAppBarIcon(
             text: 'Contact',
-            onPressed: () => pageProvider.goTo(3),
+            onPressed: () => pageProvider.goTo(2),
             icon: Icons.mail_outline,
           ),
           ExtendAppBarIcon(
             text: 'Location',
-            onPressed: () => pageProvider.goTo(4),
+            onPressed: () => pageProvider.goTo(3),
             icon: Icons.location_on,
           ),
-          const SizedBox(width: 20),          
+          const SizedBox(width: 20),
         ],
         // elevation: 10,
       ),
