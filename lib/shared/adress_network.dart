@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/link.dart';
 
 class AdressNetwork extends StatelessWidget {
   const AdressNetwork({
@@ -62,25 +63,39 @@ class AdressNetwork extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: const FaIcon(FontAwesomeIcons.facebook),
-                color: Colors.white,
-                iconSize: currentWidth < 380 ? 20 : 30,
+              Link(
+                target: LinkTarget.blank,
+                uri: Uri.parse(
+                    'https://www.facebook.com/velerosantamarta/?locale=es_LA'),
+                builder: (context, followlink) => IconButton(
+                  onPressed: followlink,
+                  icon: const FaIcon(FontAwesomeIcons.facebook),
+                  color: Colors.white,
+                  iconSize: currentWidth < 380 ? 20 : 30,
+                ),
               ),
               const SizedBox(width: 10),
-              IconButton(
-                onPressed: () {},
-                icon: const FaIcon(FontAwesomeIcons.instagram),
-                color: Colors.white,
-                iconSize: currentWidth < 380 ? 20 : 30,
+              Link(
+                target: LinkTarget.blank,
+                uri: Uri.parse('https://www.instagram.com/velerosantamarta/'),
+                builder: (context, followlink) => IconButton(
+                  onPressed: followlink,
+                  icon: const FaIcon(FontAwesomeIcons.instagram),
+                  color: Colors.white,
+                  iconSize: currentWidth < 380 ? 20 : 30,
+                ),
               ),
               const SizedBox(width: 10),
-              IconButton(
-                onPressed: () {},
-                icon: const FaIcon(FontAwesomeIcons.youtube),
-                color: Colors.white,
-                iconSize: currentWidth < 380 ? 20 : 30,
+              Link(
+                target: LinkTarget.blank,
+                uri: Uri.parse(
+                    'https://www.youtube.com/channel/UCu74XGNs5eGGQMe1gRdx8Mg'),
+                builder: (context, followlink) => IconButton(
+                  onPressed: followlink,
+                  icon: const FaIcon(FontAwesomeIcons.youtube),
+                  color: Colors.white,
+                  iconSize: currentWidth < 380 ? 20 : 30,
+                ),
               ),
             ],
           )
