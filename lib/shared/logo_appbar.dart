@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:responsive_app/provider/page_provider.dart';
 
 class LogoAppBar extends StatelessWidget {
   const LogoAppBar({
@@ -8,11 +9,18 @@ class LogoAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(6.0),
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        foregroundImage: AssetImage('assets/images/logo_small.png'),
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
+    return Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () => pageProvider.goTo(0),
+          child: const CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundImage: AssetImage('assets/images/logo_small.png'),
+          ),
+        ),
       ),
     );
   }
