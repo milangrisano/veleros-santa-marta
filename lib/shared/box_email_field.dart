@@ -9,6 +9,7 @@ class BoxEmailField extends StatelessWidget {
   final double paddingVertical;
   final double labelSizeFont;
   final double fontTextSize;
+  final TextEditingController controller;
   const BoxEmailField({
     super.key,
     required this.hintText,
@@ -19,6 +20,7 @@ class BoxEmailField extends StatelessWidget {
     this.paddingVertical = 10,
     this.labelSizeFont = 16,
     required this.fontTextSize,
+    required this.controller,
   });
 
   @override
@@ -29,6 +31,7 @@ class BoxEmailField extends StatelessWidget {
         vertical: 5,
       ),
       child: TextFormField(
+        controller: controller,
         maxLines: maxLines,
         style: TextStyle(
           fontSize: fontTextSize,

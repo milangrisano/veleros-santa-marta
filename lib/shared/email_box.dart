@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_app/shared/box_email_field.dart';
+import 'package:emailjs/emailjs.dart' as emailjs;
 
-class EmailBox extends StatelessWidget {
+class EmailBox extends StatefulWidget {
   const EmailBox({
     super.key,
     required this.size,
@@ -9,6 +10,14 @@ class EmailBox extends StatelessWidget {
 
   final Size size;
 
+  @override
+  State<EmailBox> createState() => _EmailBoxState();
+}
+
+class _EmailBoxState extends State<EmailBox> {
+  final controllerName = TextEditingController();
+  final controllerEmail = TextEditingController();
+  final controllerMessages = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -53,6 +62,7 @@ class EmailBox extends StatelessWidget {
               ),
               // ignore: prefer_const_constructors
               BoxEmailField(
+                controller: controllerName,
                 labelText: 'Nombre y Apellido',
                 hintText: 'Ingrese su Nombre y Apellido',
                 maxWidth: size.width,
@@ -61,6 +71,7 @@ class EmailBox extends StatelessWidget {
                 fontTextSize: currentWidth < 470 ? 10 : 16,
               ),
               BoxEmailField(
+                controller: controllerEmail,
                 labelText: 'Correo Electronico',
                 hintText: 'Ingrese su correo Electronico',
                 maxWidth: size.width,
@@ -69,6 +80,7 @@ class EmailBox extends StatelessWidget {
                 fontTextSize: currentWidth < 470 ? 10 : 16,
               ),
               BoxEmailField(
+                controller: controllerMessages,
                 labelText: 'Mensaje',
                 hintText: 'Ingrese su Mensaje',
                 maxWidth: size.width,
@@ -80,7 +92,16 @@ class EmailBox extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    sendEmail(
+                      name: controllerName.text,
+                      email: controllerEmail.text,
+                      messages: controllerMessages.text,
+                    );
+                    controllerName.clear();
+                    controllerEmail.clear();
+                    controllerMessages.clear();
+                  },
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(
                       color: Colors.white,
@@ -99,5 +120,32 @@ class EmailBox extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+sendEmail({
+  required String name,
+  required String email,
+  required String messages,
+}) async {
+  try {
+    await emailjs.send(
+      'service_4x6c0u6',
+      'template_ylf1j4l',
+      {
+        'to_name': name,
+        'to_email': email,
+        'message': messages,
+      },
+      const emailjs.Options(
+          publicKey: 'L_ap8poCDltF_zkrj',
+          privateKey: 'YOUR_PRIVATE_KEY',
+          limitRate: emailjs.LimitRate(
+            id: 'app',
+            throttle: 10000,
+          )),
+    );
+  } catch (error) {
+    if (error is emailjs.EmailJSResponseStatus) {}
   }
 }
