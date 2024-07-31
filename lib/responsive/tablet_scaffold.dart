@@ -31,11 +31,11 @@ class TabletScaffold extends StatelessWidget {
             onPressed: () => pageProvider.goTo(1),
             icon: Icons.people,
           ),
-          // ExtendAppBarIcon(
-          //   text: 'Pricing',
-          //   onPressed: () => pageProvider.goTo(2),
-          //   icon: Icons.attach_money_sharp,
-          // ),
+          ExtendAppBarIcon(
+            text: 'Pricing',
+            onPressed: () => pageProvider.goTo(2),
+            icon: Icons.attach_money_sharp,
+          ),
           ExtendAppBarIcon(
             text: 'Contact',
             onPressed: () => pageProvider.goTo(2),

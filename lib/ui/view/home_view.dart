@@ -36,11 +36,11 @@ class _HomeViewState extends State<HomeView> {
           Spacer(),
 
           //! Desde aqui
-          // SubTitle(
-          //     textLabel: 'Eligue tu experiencia con nosotros',
-          //     colorText: Color.fromRGBO(3, 31, 131, 1)),
-          // PickerExpirence(),
-          // SizedBox(height: 50),
+          SubTitle(
+              textLabel: 'Eligue tu experiencia con nosotros',
+              colorText: Color.fromRGBO(3, 31, 131, 1)),
+          PickerExpirence(),
+          SizedBox(height: 50),
           //! Hasta Aqui
         ],
       ),

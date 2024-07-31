@@ -5,7 +5,13 @@ class PageProvider extends ChangeNotifier {
   PageController scrollControler = PageController();
 
   //! colocar en lista pricing para no teber errores //!
-  final List<String> _pages = ['home', 'about', 'contact', 'location'];
+  final List<String> _pages = [
+    'home',
+    'about',
+    'pricing',
+    'contact',
+    'location'
+  ];
 
   int _currentIndex = 0;
 

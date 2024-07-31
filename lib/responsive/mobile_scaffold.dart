@@ -40,11 +40,11 @@ class MobileScaffold extends StatelessWidget {
               name: const Text('Nosotros'),
               onPressed: () => pageProvider.goTo(1),
             ),
-            // DrawerListTile(
-            //   icon: Icons.money,
-            //   name: const Text('Imagenes'),
-            //   onPressed: () => pageProvider.goTo(2),
-            // ),
+            DrawerListTile(
+              icon: Icons.money,
+              name: const Text('Imagenes'),
+              onPressed: () => pageProvider.goTo(2),
+            ),
             DrawerListTile(
               icon: Icons.mail_outline_outlined,
               name: const Text('Servicios'),

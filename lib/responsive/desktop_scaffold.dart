@@ -30,17 +30,17 @@ class DesktopScaffold extends StatelessWidget {
             text: 'Nosotros',
             onPressed: () => pageProvider.goTo(1),
           ),
-          // ExtendAppBarButton(
-          //   text: 'Imagenes',
-          //   onPressed: () => pageProvider.goTo(2),
-          // ),
           ExtendAppBarButton(
-            text: 'Servicios',
+            text: 'Imagenes',
             onPressed: () => pageProvider.goTo(2),
           ),
           ExtendAppBarButton(
-            text: 'Contactanos',
+            text: 'Servicios',
             onPressed: () => pageProvider.goTo(3),
+          ),
+          ExtendAppBarButton(
+            text: 'Contactanos',
+            onPressed: () => pageProvider.goTo(4),
           ),
           const SizedBox(width: 20),
         ],
