@@ -21,12 +21,13 @@ class SubTitle extends StatelessWidget {
               fontWeight: FontWeight.bold,
               fontSize: 30,
               color: colorText,
-              fontFamily: 'Praise',
+              fontFamily: 'Akatab',
               shadows: const [
                 Shadow(
                     offset: Offset(2.0, 2.0),
                     blurRadius: 1.0,
-                    color: Colors.white)
+                    // color: Colors.white),
+                    color: Color.fromRGBO(3, 31, 131, 1)),
               ]),
         ),
       ),

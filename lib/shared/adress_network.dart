@@ -77,7 +77,7 @@ class AdressNetwork extends StatelessWidget {
               const SizedBox(width: 10),
               Link(
                 target: LinkTarget.blank,
-                uri: Uri.parse('https://www.instagram.com/velerosantamarta/'),
+                uri: Uri.parse('https://www.instagram.com/tutourcolombia/'),
                 builder: (context, followlink) => IconButton(
                   onPressed: followlink,
                   icon: const FaIcon(FontAwesomeIcons.instagram),
@@ -89,7 +89,7 @@ class AdressNetwork extends StatelessWidget {
               Link(
                 target: LinkTarget.blank,
                 uri: Uri.parse(
-                    'https://www.youtube.com/channel/UCu74XGNs5eGGQMe1gRdx8Mg'),
+                    'https://api.whatsapp.com/message/TL3FZRYCTTNKN1?autoload=1&app_absent=0'),
                 builder: (context, followlink) => IconButton(
                   onPressed: followlink,
                   icon: const FaIcon(FontAwesomeIcons.youtube),

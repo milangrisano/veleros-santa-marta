@@ -52,9 +52,93 @@ class _CustomSwiper extends StatelessWidget {
         size: 50,
       ),
       itemBuilder: (context, index) {
-        return Image.asset(
-          swiperContent[index].imagen,
-          fit: BoxFit.fitWidth,
+        return Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(swiperContent[index].imagen))),
+            ),
+            Positioned(
+                bottom: 60,
+                right: 170,
+                child: Container(
+                  height: 100,
+                  width: 250,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      color: Colors.white.withOpacity(0.6)),
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/logo_small.png'),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 4,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 15.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Yei_Travelmarket',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: 10.0),
+                                child: Text(
+                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 6.0),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      '11 Sem',
+                                      textAlign: TextAlign.justify,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 20.0),
+                                      child: Text(
+                                        'Responder',
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                          color: Colors.black54,
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )),
+          ],
         );
       },
     );

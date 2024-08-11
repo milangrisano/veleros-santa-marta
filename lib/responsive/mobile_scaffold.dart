@@ -48,12 +48,12 @@ class MobileScaffold extends StatelessWidget {
             DrawerListTile(
               icon: Icons.mail_outline_outlined,
               name: const Text('Servicios'),
-              onPressed: () => pageProvider.goTo(2),
+              onPressed: () => pageProvider.goTo(3),
             ),
             DrawerListTile(
               icon: Icons.location_on,
               name: const Text('Contactanos'),
-              onPressed: () => pageProvider.goTo(3),
+              onPressed: () => pageProvider.goTo(4),
             ),
           ],
         ),

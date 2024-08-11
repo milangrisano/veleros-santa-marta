@@ -38,12 +38,12 @@ class TabletScaffold extends StatelessWidget {
           ),
           ExtendAppBarIcon(
             text: 'Contact',
-            onPressed: () => pageProvider.goTo(2),
+            onPressed: () => pageProvider.goTo(3),
             icon: Icons.mail_outline,
           ),
           ExtendAppBarIcon(
             text: 'Location',
-            onPressed: () => pageProvider.goTo(3),
+            onPressed: () => pageProvider.goTo(4),
             icon: Icons.location_on,
           ),
           const SizedBox(width: 20),

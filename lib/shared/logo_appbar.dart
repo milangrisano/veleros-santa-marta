@@ -11,14 +11,14 @@ class LogoAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return Padding(
-      padding: const EdgeInsets.all(6.0),
+      padding: const EdgeInsets.all(10.0),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () => pageProvider.goTo(0),
           child: const CircleAvatar(
             backgroundColor: Colors.transparent,
-            foregroundImage: AssetImage('assets/images/logo_small.png'),
+            foregroundImage: AssetImage('assets/images/Logo2.png'),
           ),
         ),
       ),

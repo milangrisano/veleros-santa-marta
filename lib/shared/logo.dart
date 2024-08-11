@@ -14,26 +14,27 @@ class SquareLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.bottomCenter,
-      color: backgroundColor,
-      height: height,
-      width: width,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/logo_small.png'),
-          const FittedBox(
-            child: Text(
-             'Veleros Santa Marta',
-              style: TextStyle(
-                color: Color.fromRGBO(3, 31, 131, 1),
-                fontFamily: 'DancingScript',
-                fontSize: 32,
-              )
+        alignment: Alignment.bottomCenter,
+        color: backgroundColor,
+        height: height,
+        width: width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/Logo3.png',
+              color: const Color.fromRGBO(75, 175, 232, 1),
+              scale: 3,
             ),
-          ),
-        ],
-      )
-    );
+            const FittedBox(
+              child: Text('TUTOUR COLOMBIA',
+                  style: TextStyle(
+                    color: Color.fromRGBO(75, 175, 232, 1),
+                    fontFamily: 'Akatab',
+                    fontSize: 32,
+                  )),
+            ),
+          ],
+        ));
   }
 }
