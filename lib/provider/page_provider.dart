@@ -7,10 +7,10 @@ class PageProvider extends ChangeNotifier {
   //! colocar en lista pricing para no teber errores //!
   final List<String> _pages = [
     'home',
-    'about',
-    'pricing',
-    'contact',
-    'location'
+    'aboutus',
+    'images',
+    'services',
+    'Contact'
   ];
 
   int _currentIndex = 0;
