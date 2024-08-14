@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
 import 'package:responsive_app/shared/extend_appbar_button.dart';
 import 'package:responsive_app/shared/logo_appbar.dart';
 import 'package:responsive_app/shared/title_appbar.dart';
 import 'package:responsive_app/ui/home_body.dart';
+import 'package:url_launcher/link.dart';
 
 class DesktopScaffold extends StatelessWidget {
   const DesktopScaffold({super.key});
@@ -12,41 +14,58 @@ class DesktopScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
-    return Scaffold(
-      backgroundColor: Colors.white,
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: const LogoAppBar(),
-        title: const TitleAppBar(
-          color: Colors.white,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          leading: const LogoAppBar(),
+          title: const TitleAppBar(
+            color: Colors.white,
+          ),
+          actions: [
+            ExtendAppBarButton(
+              text: 'Inicio',
+              onPressed: () => pageProvider.goTo(0),
+            ),
+            ExtendAppBarButton(
+              text: 'Nosotros',
+              onPressed: () => pageProvider.goTo(1),
+            ),
+            ExtendAppBarButton(
+              text: 'Imagenes',
+              onPressed: () => pageProvider.goTo(2),
+            ),
+            ExtendAppBarButton(
+              text: 'Servicios',
+              onPressed: () => pageProvider.goTo(3),
+            ),
+            ExtendAppBarButton(
+              text: 'Contactanos',
+              onPressed: () => pageProvider.goTo(4),
+            ),
+            const SizedBox(width: 20),
+          ],
+          // elevation: 10,
         ),
-        actions: [
-          ExtendAppBarButton(
-            text: 'Inicio',
-            onPressed: () => pageProvider.goTo(0),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.white,
+          child: Link(
+            target: LinkTarget.blank,
+            uri: Uri.parse(
+                'https://api.whatsapp.com/message/TL3FZRYCTTNKN1?autoload=1&app_absent=0'),
+            builder: (context, followlink) => IconButton(
+              onPressed: followlink,
+              icon: const FaIcon(FontAwesomeIcons.whatsapp),
+            ),
           ),
-          ExtendAppBarButton(
-            text: 'Nosotros',
-            onPressed: () => pageProvider.goTo(1),
-          ),
-          ExtendAppBarButton(
-            text: 'Imagenes',
-            onPressed: () => pageProvider.goTo(2),
-          ),
-          ExtendAppBarButton(
-            text: 'Servicios',
-            onPressed: () => pageProvider.goTo(3),
-          ),
-          ExtendAppBarButton(
-            text: 'Contactanos',
-            onPressed: () => pageProvider.goTo(4),
-          ),
-          const SizedBox(width: 20),
-        ],
-        // elevation: 10,
+        ),
+        body: const HomeBody(),
       ),
-      body: const HomeBody(),
     );
   }
 }

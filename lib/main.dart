@@ -12,9 +12,7 @@ class AppState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_)=> PageProvider())
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => PageProvider())],
       child: const MainApp(),
     );
   }
@@ -28,17 +26,17 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-
   @override
   void initState() {
     super.initState();
     Flurorouter.configureRoutes();
   }
+
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Veleros Santa Marta',
+      title: 'TUTOUR',
       onGenerateRoute: Flurorouter.router.generator,
       initialRoute: '/home',
     );
