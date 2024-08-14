@@ -69,6 +69,7 @@ class _EmailBoxState extends State<EmailBox> {
                 maxHeigth: currentHeight < 870 ? 35 : size.height,
                 labelSizeFont: currentWidth < 470 ? 10 : 16,
                 fontTextSize: currentWidth < 470 ? 10 : 16,
+                prefixIcon: const Icon(Icons.people),
               ),
               BoxEmailField(
                 controller: controllerEmail,
@@ -78,6 +79,7 @@ class _EmailBoxState extends State<EmailBox> {
                 maxHeigth: currentHeight < 870 ? 35 : size.height,
                 labelSizeFont: currentWidth < 470 ? 10 : 16,
                 fontTextSize: currentWidth < 470 ? 10 : 16,
+                prefixIcon: const Icon(Icons.mail_outline),
               ),
               BoxEmailField(
                 controller: controllerMessages,
@@ -88,6 +90,7 @@ class _EmailBoxState extends State<EmailBox> {
                 maxHeigth: currentHeight < 870 ? 95 : size.height * 1 / 10,
                 labelSizeFont: currentWidth < 470 ? 10 : 16,
                 fontTextSize: currentWidth < 470 ? 10 : 16,
+                prefixIcon: const Icon(Icons.message_outlined),
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),

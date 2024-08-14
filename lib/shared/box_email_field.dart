@@ -10,6 +10,7 @@ class BoxEmailField extends StatelessWidget {
   final double labelSizeFont;
   final double fontTextSize;
   final TextEditingController controller;
+  final Widget prefixIcon;
   const BoxEmailField({
     super.key,
     required this.hintText,
@@ -21,6 +22,7 @@ class BoxEmailField extends StatelessWidget {
     this.labelSizeFont = 16,
     required this.fontTextSize,
     required this.controller,
+    required this.prefixIcon,
   });
 
   @override
@@ -42,7 +44,7 @@ class BoxEmailField extends StatelessWidget {
             maxHeight: maxHeigth,
           ),
           fillColor: Colors.white,
-          prefixIcon: const Icon(Icons.mail_outline),
+          prefixIcon: prefixIcon,
           filled: true,
           hintText: hintText,
           hintStyle: const TextStyle(

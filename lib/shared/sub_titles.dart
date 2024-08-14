@@ -18,17 +18,19 @@ class SubTitle extends StatelessWidget {
         child: Text(
           textLabel,
           style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-              color: colorText,
-              fontFamily: 'Akatab',
-              shadows: const [
-                Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 1.0,
-                    // color: Colors.white),
-                    color: Color.fromRGBO(3, 31, 131, 1)),
-              ]),
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: colorText,
+            fontFamily: 'Akatab',
+            shadows: const [
+              Shadow(
+                offset: Offset(2.0, 2.0),
+                blurRadius: 1.0,
+                // color: Colors.white),
+                color: Color.fromRGBO(3, 31, 131, 1),
+              ),
+            ],
+          ),
         ),
       ),
     );

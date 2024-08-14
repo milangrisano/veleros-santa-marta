@@ -12,6 +12,7 @@ class PickerExpirence extends StatefulWidget {
 class _PickerExpirenceState extends State<PickerExpirence> {
   @override
   Widget build(BuildContext context) {
+    final currentWidth = MediaQuery.of(context).size.width;
     // final size = MediaQuery.of(context).size;
     return Container(
       width: 720,
@@ -21,26 +22,65 @@ class _PickerExpirenceState extends State<PickerExpirence> {
         color: Colors.white.withOpacity(0.3),
       ),
       padding: const EdgeInsets.all(10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Flexible(
-            child: CustomDropDownButton(
-                // width: 250,
-                ),
-          ),
-          const SizedBox(width: 5),
-          const DatePicker(),
-          SizedBox(
-            height: 40,
-            child: IconButton(
+      // child: const PickersExpiriencesTablet(),
+      // child: const PickersExpiriencesMobile(),
+      child: currentWidth > 560
+          ? const PickersExpiriencesTablet()
+          : const PickersExpiriencesMobile(),
+    );
+  }
+}
+
+class PickersExpiriencesTablet extends StatelessWidget {
+  const PickersExpiriencesTablet({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Flexible(
+          child: CustomDropDownButton(),
+        ),
+        const DatePicker(),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.send_rounded),
+          color: Colors.white,
+        ),
+      ],
+    );
+  }
+}
+
+class PickersExpiriencesMobile extends StatelessWidget {
+  const PickersExpiriencesMobile({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const CustomDropDownButton(),
+        const SizedBox(
+          height: 5,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const DatePicker(),
+            IconButton(
               onPressed: () {},
               icon: const Icon(Icons.send_rounded),
               color: Colors.white,
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      ],
     );
   }
 }

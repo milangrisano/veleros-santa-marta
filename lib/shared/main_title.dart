@@ -20,19 +20,20 @@ class MainTitle extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: fontsize,
-            color: color,
-            letterSpacing: letterSpacing,
-            fontFamily: 'Akatab',
-            shadows: const [
-              Shadow(
-                  offset: Offset(3.0, 3.0),
-                  blurRadius: 2.0,
-                  color: Color.fromRGBO(3, 31, 131, 1)
-                  // color: Color.fromRGBO(19, 156, 227, 1),
-                  )
-            ]),
+          fontWeight: FontWeight.bold,
+          fontSize: fontsize,
+          color: color,
+          letterSpacing: letterSpacing,
+          fontFamily: 'Akatab',
+          shadows: const [
+            Shadow(
+                offset: Offset(3.0, 3.0),
+                blurRadius: 2.0,
+                color: Color.fromRGBO(3, 31, 131, 1)
+                // color: Color.fromRGBO(19, 156, 227, 1),
+                )
+          ],
+        ),
       ),
     );
   }

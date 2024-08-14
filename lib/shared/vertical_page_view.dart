@@ -41,7 +41,7 @@ class VerticalPageView extends StatelessWidget {
                   style: const TextStyle(
                     color: Color.fromRGBO(3, 31, 131, 1),
                     fontSize: 30,
-                    fontFamily: 'Ephesis',
+                    fontFamily: 'Akatab',
                   ),
                 ),
               ),

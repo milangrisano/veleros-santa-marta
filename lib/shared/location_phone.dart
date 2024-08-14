@@ -10,7 +10,10 @@ class LocationPhone extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
-      children: [const AdressNetwork(), EmailBox(size: size)],
+      children: [
+        const AdressNetwork(),
+        EmailBox(size: size),
+      ],
     );
   }
 }

@@ -21,10 +21,11 @@ class ContactView extends StatelessWidget {
               title: Text(''),
             ),
       Container(
-          color: Colors.transparent,
-          width: size.width * 9 / 10,
-          height: size.height,
-          child: const CustomSwiper()),
+        color: Colors.transparent,
+        width: size.width * 9 / 10,
+        height: size.height,
+        child: const CustomSwiper(),
+      ),
     ]);
   }
 }
