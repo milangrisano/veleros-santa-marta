@@ -10,7 +10,7 @@ class PageProvider extends ChangeNotifier {
     'aboutus',
     'images',
     'services',
-    'Contact'
+    'contact'
   ];
 
   int _currentIndex = 0;
