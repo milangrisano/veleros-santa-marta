@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_app/shared/main_title.dart';
+<<<<<<< HEAD
 import 'package:responsive_app/shared/picker_expirience.dart';
 import 'package:responsive_app/shared/sub_titles.dart';
 import 'package:simple_shadow/simple_shadow.dart';
+=======
+//import 'package:responsive_app/shared/picker_expirience.dart';
+//import 'package:responsive_app/shared/sub_titles.dart';
+>>>>>>> origin
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
