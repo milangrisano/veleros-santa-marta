@@ -49,7 +49,7 @@ class DesktopScaffold extends StatelessWidget {
           ],
           // elevation: 10,
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+        // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: Colors.green,
