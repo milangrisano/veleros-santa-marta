@@ -6,7 +6,7 @@ import 'package:responsive_app/ui/view/about_view_mobile.dart';
 import 'package:responsive_app/ui/view/contact_view.dart';
 import 'package:responsive_app/ui/view/home_view.dart';
 import 'package:responsive_app/ui/view/location_view.dart';
-import 'package:responsive_app/ui/view/pricing_view.dart';
+// import 'package:responsive_app/ui/view/pricing_view.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -21,7 +21,7 @@ class HomeBody extends StatelessWidget {
       children: [
         const HomeView(),
         currentWidth < 720 ? const AboutViewMobile() : const AboutView(),
-        const PricingView(),
+        // const PricingView(),
         const ContactView(),
         const LocationView(),
       ],
