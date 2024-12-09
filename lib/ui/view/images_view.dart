@@ -2,8 +2,8 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_app/content/info_swiper.dart';
 
-class PricingView extends StatelessWidget {
-  const PricingView({super.key});
+class ImagesView extends StatelessWidget {
+  const ImagesView({super.key});
 
   @override
   Widget build(BuildContext context) {

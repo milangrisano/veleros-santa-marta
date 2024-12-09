@@ -8,8 +8,8 @@ class PageProvider extends ChangeNotifier {
   final List<String> _pages = [
     'home',
     'aboutus',
-    'images',
-    'services',
+    // 'images',
+    'expirieces',
     'contact'
   ];
 

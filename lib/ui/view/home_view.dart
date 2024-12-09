@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_app/shared/main_title.dart';
-import 'package:responsive_app/shared/picker_expirience.dart';
-import 'package:responsive_app/shared/sub_titles.dart';
+// import 'package:responsive_app/shared/picker_expirience.dart';
+// import 'package:responsive_app/shared/sub_titles.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 //import 'package:responsive_app/shared/picker_expirience.dart';
 //import 'package:responsive_app/shared/sub_titles.dart';
@@ -19,8 +19,8 @@ class _HomeViewState extends State<HomeView> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-        // image: AssetImage('assets/images/Artivela2.jpeg'),
-        image: AssetImage('assets/images/background_home.jpg'),
+        image: AssetImage('assets/images/Artivela2.jpeg'),
+        // image: AssetImage('assets/images/background_home.jpg'),
         fit: BoxFit.cover,
         colorFilter: ColorFilter.mode(Colors.transparent, BlendMode.color),
       )),
@@ -53,16 +53,16 @@ class _HomeViewState extends State<HomeView> {
             fontsize: 25,
             letterSpacing: 5,
           ),
-          //?Activar aqui de ser requerido!!!
           const Spacer(),
+          //?Para visualizar el Datepicker descomentar!!!
           //! Desde aqui
-          SubTitle(
-            textLabel: 'Eligue tu experiencia con nosotros',
-            // colorText: Color.fromRGBO(3, 31, 131, 1)),
-            colorText: Colors.grey.shade300,
-          ),
-          const PickerExpirence(),
-          const SizedBox(height: 50),
+          // SubTitle(
+          //   textLabel: 'Eligue tu experiencia con nosotros',
+          //   // colorText: Color.fromRGBO(3, 31, 131, 1)),
+          //   colorText: Colors.grey.shade300,
+          // ),
+          // const PickerExpirence(),
+          // const SizedBox(height: 50),
           //! Hasta Aqui
         ],
       ),
