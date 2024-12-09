@@ -33,17 +33,17 @@ class DesktopScaffold extends StatelessWidget {
               text: 'Nosotros',
               onPressed: () => pageProvider.goTo(1),
             ),
+            // ExtendAppBarButton(
+            //   text: 'Imagenes',
+            //   onPressed: () => pageProvider.goTo(2),
+            // ),
             ExtendAppBarButton(
-              text: 'Imagenes',
+              text: 'Experiencias',
               onPressed: () => pageProvider.goTo(2),
             ),
             ExtendAppBarButton(
-              text: 'Servicios',
-              onPressed: () => pageProvider.goTo(3),
-            ),
-            ExtendAppBarButton(
               text: 'Contactanos',
-              onPressed: () => pageProvider.goTo(4),
+              onPressed: () => pageProvider.goTo(3),
             ),
             const SizedBox(width: 20),
           ],
@@ -69,4 +69,3 @@ class DesktopScaffold extends StatelessWidget {
     );
   }
 }
-//! colocar en lista pricing para no teber errores y cambiar el index de goTo()//!

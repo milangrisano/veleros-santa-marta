@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
 import 'package:responsive_app/shared/custom_drawer_header.dart';
@@ -6,6 +7,7 @@ import 'package:responsive_app/shared/drawer_list_tile.dart';
 import 'package:responsive_app/shared/logo_appbar.dart';
 import 'package:responsive_app/shared/title_appbar.dart';
 import 'package:responsive_app/ui/home_body.dart';
+import 'package:url_launcher/link.dart';
 
 class MobileScaffold extends StatelessWidget {
   const MobileScaffold({super.key});
@@ -25,6 +27,20 @@ class MobileScaffold extends StatelessWidget {
         ),
         centerTitle: false,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+        child: Link(
+          target: LinkTarget.blank,
+          uri: Uri.parse(
+              'https://api.whatsapp.com/message/TL3FZRYCTTNKN1?autoload=1&app_absent=0'),
+          builder: (context, followlink) => IconButton(
+            onPressed: followlink,
+            icon: const FaIcon(FontAwesomeIcons.whatsapp),
+          ),
+        ),
+      ),
       endDrawer: Drawer(
         backgroundColor: const Color.fromRGBO(19, 156, 227, 1),
         child: Column(
@@ -40,20 +56,20 @@ class MobileScaffold extends StatelessWidget {
               name: const Text('Nosotros'),
               onPressed: () => pageProvider.goTo(1),
             ),
-            DrawerListTile(
-              icon: Icons.money,
-              name: const Text('Imagenes'),
-              onPressed: () => pageProvider.goTo(2),
-            ),
+            // DrawerListTile(
+            //   icon: Icons.money,
+            //   name: const Text('Imagenes'),
+            //   onPressed: () => pageProvider.goTo(2),
+            // ),
             DrawerListTile(
               icon: Icons.mail_outline_outlined,
-              name: const Text('Servicios'),
-              onPressed: () => pageProvider.goTo(3),
+              name: const Text('Experiencias'),
+              onPressed: () => pageProvider.goTo(2),
             ),
             DrawerListTile(
               icon: Icons.location_on,
               name: const Text('Contactanos'),
-              onPressed: () => pageProvider.goTo(4),
+              onPressed: () => pageProvider.goTo(3),
             ),
           ],
         ),
@@ -62,4 +78,3 @@ class MobileScaffold extends StatelessWidget {
     );
   }
 }
-//! colocar en lista pricing para no teber errores y cambiar el index de goTo()//!
