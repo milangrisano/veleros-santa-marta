@@ -3,8 +3,8 @@ import 'package:responsive_app/shared/background_line_horizontal.dart';
 import 'package:responsive_app/shared/background_line_vertical.dart';
 import 'package:responsive_app/shared/custom_swiper.dart';
 
-class ContactView extends StatelessWidget {
-  const ContactView({super.key});
+class ExpirienceView extends StatelessWidget {
+  const ExpirienceView({super.key});
 
   @override
   Widget build(BuildContext context) {

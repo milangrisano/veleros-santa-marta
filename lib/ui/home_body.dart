@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:responsive_app/provider/page_provider.dart';
 import 'package:responsive_app/ui/view/about_view.dart';
 import 'package:responsive_app/ui/view/about_view_mobile.dart';
-import 'package:responsive_app/ui/view/contact_view.dart';
+import 'package:responsive_app/ui/view/expirience_view.dart';
 import 'package:responsive_app/ui/view/home_view.dart';
 import 'package:responsive_app/ui/view/location_view.dart';
 // import 'package:responsive_app/ui/view/images_view.dart';
@@ -23,7 +23,7 @@ class HomeBody extends StatelessWidget {
         currentWidth < 720 ? const AboutViewMobile() : const AboutView(),
         //?Para ver en el scroll descomentar desde aqui
         /*const ImagesView(),*/
-        const ContactView(),
+        const ExpirienceView(),
         const LocationView(),
       ],
     );

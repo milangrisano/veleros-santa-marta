@@ -51,7 +51,7 @@ class HorizontalPageView extends StatelessWidget {
                   swiperContent[index].descripcion,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
-                      fontSize: currentWidth > 1171 ? 16 : 12,
+                      fontSize: currentWidth > 1171 ? 15 : 12,
                       // fontFamily: 'Pacifico'
                       fontFamily: 'MontserratAlternates',
                       color: Colors.white),
